@@ -103,8 +103,8 @@ ul {
   min-height: 560px;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding-top: 120px;
+  justify-content: space-between;
+  padding: 140px 0 60px;
   color: #fff;
   font-family: "Noto Serif JP", serif;
   text-align: center;
@@ -193,12 +193,15 @@ ul {
 }
 
 .food_grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 30px;
 }
 
 .menu_card {
+  display: flex;
+  width: 49%;
   overflow: hidden;
   border-radius: 6px;
   color: var(--ink);
@@ -207,12 +210,13 @@ ul {
 }
 
 .menu_card img {
-  width: 100%;
-  height: 250px;
+  width: 55%;
+  height: auto;
   object-fit: cover;
 }
 
 .menu_card_text {
+  width: 45%;
   padding: 22px 26px 26px;
 }
 
@@ -234,21 +238,32 @@ ul {
 }
 
 .coffee_grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 28px;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -20px;
+  text-align: left;
+}
+
+.coffee_item {
+  display: flex;
+  align-items: center;
+  width: 49%;
+  margin: 20px;
 }
 
 .coffee_item img {
-  width: 180px;
-  max-width: 100%;
+  width: 20%;
   aspect-ratio: 1;
-  margin: 0 auto 16px;
+  margin: 0 16px 0 0;
   border: 5px solid rgba(255,255,255,.85);
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 10px 24px rgba(0,0,0,.35);
+}
+
+.coffee_item_text {
+  width: 80%;
 }
 
 .coffee_item .price {
@@ -276,14 +291,15 @@ ul {
 }
 
 .access dt {
-  width: 30%;
+  width: 80px;
+  flex-shrink: 0;
   color: var(--coffee);
   font-family: "Noto Serif JP", serif;
   font-weight: 700;
 }
 
 .access dd {
-  width: 70%;
+  flex: 1;
   margin: 0;
 }
 
@@ -374,11 +390,20 @@ footer {
   }
 
   .food_grid {
-    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .menu_card {
+    width: 100%;
   }
 
   .coffee_grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: -10px;
+  }
+
+  .coffee_item {
+    width: 100%;
+    margin: 10px;
   }
 
   .menu {
