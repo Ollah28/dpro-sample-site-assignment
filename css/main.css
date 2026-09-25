@@ -94,17 +94,14 @@ ul {
 }
 
 .hero {
+  position: relative;
   min-height: 560px;
   background: center / cover no-repeat url("../images/sample_key.jpg");
 }
 
 .key {
-  display: flex;
-  min-height: 560px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 140px 0 60px;
+  position: absolute;
+  inset: 0;
   color: #fff;
   font-family: "Noto Serif JP", serif;
   text-align: center;
@@ -112,16 +109,26 @@ ul {
 }
 
 .key h1 {
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
   margin: 0;
   font-size: clamp(3.3rem, 9vw, 6.5rem);
   line-height: 1.15;
   letter-spacing: .08em;
+  white-space: nowrap;
 }
 
 .key p {
-  margin: 12px 0 0;
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
   font-size: clamp(1.15rem, 2vw, 1.65rem);
   letter-spacing: .32em;
+  white-space: nowrap;
 }
 
 .section_title {
@@ -194,14 +201,13 @@ ul {
 
 .food_grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  row-gap: 30px;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .menu_card {
   display: flex;
-  width: 49%;
+  width: 100%;
   overflow: hidden;
   border-radius: 6px;
   color: var(--ink);
@@ -241,7 +247,7 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: -20px;
+  margin: 20px;
   text-align: left;
 }
 
@@ -377,6 +383,18 @@ footer {
   .hero,
   .key {
     min-height: 480px;
+  }
+
+  .key h1 {
+    top: 70px;
+    white-space: normal;
+    width: 90%;
+  }
+
+  .key p {
+    bottom: 40px;
+    white-space: normal;
+    width: 90%;
   }
 
   .concept_content {
