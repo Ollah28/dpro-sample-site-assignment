@@ -102,31 +102,27 @@ ul {
 .key {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  height: 170px;
-  color: #fff;
+  left: 7%;
+  transform: translateY(-50%);
+  width: auto;
+  margin: 0;
+  padding: 0;
+  color: var(--ink);
   font-family: "Noto Serif JP", serif;
-  text-align: center;
-  text-shadow: 0 3px 16px rgba(0,0,0,.8);
+  text-align: left;
 }
 
 .key h1 {
   margin: 0;
-  font-size: clamp(3rem, 8vw, 5.5rem);
-  line-height: 1.15;
-  letter-spacing: .08em;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
   white-space: nowrap;
 }
 
 .key p {
-  margin: 0;
-  font-size: clamp(1.1rem, 2vw, 1.55rem);
-  letter-spacing: .32em;
+  margin: 10px 0 0;
+  font-size: clamp(.85rem, 1.4vw, 1rem);
+  letter-spacing: .05em;
   white-space: nowrap;
 }
 
@@ -200,13 +196,12 @@ ul {
 
 .food_grid {
   display: flex;
-  flex-direction: column;
-  gap: 30px;
+  justify-content: space-between;
 }
 
 .menu_card {
   display: flex;
-  width: 100%;
+  width: 49%;
   overflow: hidden;
   border-radius: 6px;
   color: var(--ink);
@@ -383,19 +378,9 @@ footer {
     min-height: 480px;
   }
 
-  .key {
-    height: 130px;
-    width: 90%;
-  }
-
-  .key h1 {
-    white-space: normal;
-    width: 100%;
-  }
-
+  .key h1,
   .key p {
     white-space: normal;
-    width: 100%;
   }
 
   .concept_content {
@@ -409,7 +394,8 @@ footer {
   }
 
   .food_grid {
-    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
   }
 
   .menu_card {
